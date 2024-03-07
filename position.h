@@ -25,6 +25,7 @@ public:
    */
   Position(int x, int y);
   Position* predecessor;
+  bool visited; 
   /* return X/Y coordinate of current position */
   int getX();
   int getY();

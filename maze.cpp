@@ -82,7 +82,7 @@ vector<Position*> Maze::solveBreadthFirst() {
     
     maze_queue.push(start);
     start -> predecessor = nullptr
-
+    start -> visited = true;
     path_length = 0;
     num_of_nodes_visited = 0;
     
@@ -107,9 +107,10 @@ vector<Position*> Maze::solveBreadthFirst() {
         for (int i = 0; i < neighbors.size(); ++i) {
           Position * neighbor = neighbors[i];
 
-            if (neighbor -> predecessor == nullptr) {
+            if (!neighbor -> visited) {
                 maze_queue.push(neighbor);
                 neighbor -> predecessor = current;
+                neighbor -> visited = true;
             }
         }
     }

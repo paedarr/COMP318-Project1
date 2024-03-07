@@ -2,22 +2,22 @@
 
 # PROJECT SPLITS:
 ## Paedar's Work - 
-### DFS Algorithm, Position Class Implementation, Dictionary Impl., Main Impl., Maze Class Impl., README.md, Test Debugging
-### Est. Time: ~13 hours
+DFS Algorithm, Position Class Implementation, Dictionary Impl., Main Impl., Maze Class Impl., README.md, Test Debugging
+####Est. Time: ~13 hours
 
 ## Gavin's Work - 
-### BFS Algorithm, Maze Class Implementation, Assisted w/ Position+Dictionary, Test Debugging, BFS Research
-### Est. Time: ~10 hours + Tutoring
+BFS Algorithm, Maze Class Implementation, Assisted w/ Position+Dictionary, Test Debugging, BFS Research
+####Est. Time: ~10 hours + Tutoring
 
 ---
 
 # **Project Description**
-### This project is focused on the traversal of a maze, represented as a vector of Position object pointers. Utilizing the Position class, and its methods, allows for a more detailed, and functional traversal of the maze. The program uses multiple files, and has some dependencies, which are listed below in the _dependencies_ category.
+#### This project is focused on the traversal of a maze, represented as a vector of Position object pointers. Utilizing the Position class, and its methods, allows for a more detailed, and functional traversal of the maze. The program uses multiple files, and has some dependencies, which are listed below in the _dependencies_ category.
 
 ---
 
 # **Dependencies**
-### All of the following files are required for the program to compile, and run, successfully:
+#### All of the following files are required for the program to compile, and run, successfully:
 + main.cpp
 + maze.cpp
 + maze.h
@@ -34,7 +34,7 @@
 ---
 
 # **How to Compile & Run**
-### Follow the steps below to Compile and Run the program properly:
+#### ***Follow the steps below to Compile and Run the program properly***:
 1. Make sure all files listed in the _dependencies_ category are located within the same directory. 
 2. Using any C++ compiler, preferably g++, and compile main.cpp using the following command in terminal/shell:
 > EDIT THIS
