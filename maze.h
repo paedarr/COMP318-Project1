@@ -1,7 +1,7 @@
-/* Comp 318 Spring 2023, programming assignment 2
- * Copyright (c) 2023
- * Wheaton College, Computer Science Department, Norton MA
- * M. Gagne
+/* 
+ * Comp 318 Spring 2024, Programming Assignment 1
+ * Wheaton College MA
+ * Authors: Gavin Graham & Paedar Rader
  */
 
 #ifndef PRGASST02_MAZE_H

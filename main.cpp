@@ -1,7 +1,7 @@
-/* Comp 318 Spring 2023, programming assignment 2
- * Copyright (c) 2023
- * Wheaton College, Computer Science Department, Norton MA
- * M. Gagne
+/* 
+ * Comp 318 Spring 2024, Programming Assignment 1
+ * Wheaton College MA
+ * Authors: Gavin Graham & Paedar Rader
  */
 
 #include <iostream>
@@ -22,7 +22,7 @@ int main() {
   cout << "Welcome to The A-Maze-ing Race." << endl;
   string map;
   cout << "where is your maze file? ";
-  cin >> map; //does this error check?
+  cin >> map;
 
   Maze* userMaze = loadMap(map);
 

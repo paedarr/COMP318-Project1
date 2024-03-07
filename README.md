@@ -3,12 +3,13 @@
 # PROJECT SPLITS:
 ## Paedar's Work - 
 DFS Algorithm, Position Class Implementation, Dictionary Impl., Main Impl., Maze Class Impl., README.md, Test Debugging
-#### Est. Time: ~13 hours
+#### Est. Time: ~15 hours
 
 ## Gavin's Work - 
 BFS Algorithm, Maze Class Implementation, Assisted w/ Position+Dictionary, Test Debugging, BFS Research
-#### Est. Time: ~10 hours + Tutoring
+#### Est. Time: ~11 hours + Tutoring
 
+**Both of us met at the library multiple times, and there, spent upwards of 6 hours debugging and working on code together.**
 ---
 
 # **Project Description**
@@ -16,7 +17,7 @@ BFS Algorithm, Maze Class Implementation, Assisted w/ Position+Dictionary, Test 
 
 ---
 
-# **Dependencies**
+# **Dependencies/File List**
 #### All of the following files are required for the program to compile, and run, successfully:
 + main.cpp
 + maze.cpp
@@ -37,12 +38,24 @@ BFS Algorithm, Maze Class Implementation, Assisted w/ Position+Dictionary, Test 
 #### ***Follow the steps below to Compile and Run the program properly***:
 1. Make sure all files listed in the _dependencies_ category are located within the same directory. 
 2. Using any C++ compiler, preferably g++, and compile main.cpp using the following command in terminal/shell:
-> EDIT THIS
+> g++ main.cpp mazeUtils.cpp position.cpp maze.cpp myDictionary.cpp
+**or**
+> g++ test.cpp mazeUtils.cpp position.cpp maze.cpp myDictionary.cpp
+> _use this command for the testing cases file (test.cpp)_
 3. If program compiles with no errors, next command line should prompt, where you should then type:
 > ./a.out
-4. Program should now be outputting and prompting user input in the terminal, where the program asks for the location of the .map file.
+4. Program should now be outputting and prompting user input in the terminal, where the program asks for the location of the .map file. If you use direct file location specification (not specifying a file path), make sure the location of the .map file is in the
+same place as the .cpp files. If the file is located elsewhere, please specify the complete filepath to reach the .map file.
+> (ex.) /Algorithms318/maze_project/labyrinths/example2.map
+> _Put this entire command into the input prompt_
 5. Then, if the location is found, the program will then prompt the user to either do a DFS or BFS on the maze. 
-6. Once chosen which search to do, the user is prompted for the desired name of the output file where the traversal of the maze (the path) is outputted to. 
+6. Once chosen which search to do, the user is prompted for the desired name of the output file where the traversal of the maze (the path) is outputted to. The user does **not** have to specify the file extension name (_like say, .txt_), as the output will be in the .txt format anyways.
+7. If the maze is valid, then the chosen Algorithm traverses the maze using the given search. This process, as well as other visual indication (like the number of nodes visited) are outputted to the terminal for the user to see. The user should see two mazes, one before the traversal, and one after showing the path. If an empty maze is given, or a maze with no possible solution, there is proper error handling, and the user will be aware of what occured.
+8. If executed correctly, the program should conclude and the user should be brought back to their command prompt. 
+
+
+---
+
 
 # **SAMPLE RUNS:**
 
@@ -80,5 +93,37 @@ Path length: 14
 
 ### Test 2 (BFS - example5.map):
 ```
-please BFS test here
+Welcome to The A-Maze-ing Race.
+where is your maze file? example5.map
+BFS or DFS search?:
+BFS
+Please enter name of desired output file:
+BFS5out    
+
+Loading example5.map...
+9 9
+........#
+#.#####..
+...#...#.
+.###.#.#.
+...#.#.#.
+##.#.#.#.
+...#.#.#.
+.###.#.#.
+.....#...
+
+BFS Searching...
+@@@@@@@@#
+#.#####@@
+...#...#@
+.###.#.#@
+...#.#.#@
+##.#.#.#@
+...#.#.#@
+.###.#.#@
+.....#..@
+
+
+Path length: 17
+# of visited nodes: 32
 ```

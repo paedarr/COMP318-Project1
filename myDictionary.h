@@ -1,3 +1,9 @@
+/* 
+ * Comp 318 Spring 2024, Programming Assignment 1
+ * Wheaton College MA
+ * Authors: Gavin Graham & Paedar Rader
+ */
+
 // implement this and .cpp file
 // USE ' unordered_map ' in this file
 

@@ -1,3 +1,9 @@
+/* 
+ * Comp 318 Spring 2024, Programming Assignment 1
+ * Wheaton College MA
+ * Authors: Gavin Graham & Paedar Rader
+ */
+
 #include "myDictionary.h"
 using namespace std;
 

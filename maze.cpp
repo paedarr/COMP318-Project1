@@ -1,7 +1,7 @@
-/* Comp 318 Spring 2023, programming assignment 2
- * Copyright (c) 2023
- * Wheaton College, Computer Science Department, Norton MA
- * M. Gagne
+/* 
+ * Comp 318 Spring 2024, Programming Assignment 1
+ * Wheaton College MA
+ * Authors: Gavin Graham & Paedar Rader
  */
 
 #include <stdexcept>
@@ -24,10 +24,9 @@
 
 using namespace std;
 
-// Can Assume that Both start and end (Top Left & Bottom Right) are empty spaces. 
 
 Maze::Maze(int w, int h) {
-  // needs to initialize vector of position objects
+  
   width = w;
   height = h;
   path_length = 0;
@@ -78,17 +77,17 @@ vector<Position*> Maze::solveBreadthFirst() {
    * you saw the key
    */
   
-    queue <Position*>maze_queue; // <-- for BFS stack storage
+    queue <Position*>maze_queue; // <-- for BFS queue storage
     
     maze_queue.push(start);
-    start -> predecessor = nullptr
+    start -> predecessor = nullptr;
     start -> visited = true;
     path_length = 0;
     num_of_nodes_visited = 0;
     
     while(!maze_queue.empty()){
       num_of_nodes_visited++;
-      Position* current = maze_queue.front();//could change to a to visit queue
+      Position* current = maze_queue.front();
       maze_queue.pop();
       
       if (current == end ){
