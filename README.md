@@ -47,7 +47,7 @@
 # **SAMPLE RUNS:**
 
 ### Test 1 (DFS - example2.map):
-'''
+```
 Welcome to The A-Maze-ing Race.
 where is your maze file? /home/ubuntu/workspace/labyrinths/example2.map
 BFS or DFS search?:
@@ -75,10 +75,10 @@ DFS Searching...
 
 Path length: 14
 '#' of visited nodes: 14
-'''
+```
 *As you can see, DFS works properly, and handles the traversal well, given the correct information.*
 
 ### Test 2 (BFS - example5.map):
-'''
+```
 please BFS test here
-'''
+```
