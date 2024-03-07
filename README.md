@@ -3,11 +3,11 @@
 # PROJECT SPLITS:
 ## Paedar's Work - 
 DFS Algorithm, Position Class Implementation, Dictionary Impl., Main Impl., Maze Class Impl., README.md, Test Debugging
-####Est. Time: ~13 hours
+#### Est. Time: ~13 hours
 
 ## Gavin's Work - 
 BFS Algorithm, Maze Class Implementation, Assisted w/ Position+Dictionary, Test Debugging, BFS Research
-####Est. Time: ~10 hours + Tutoring
+#### Est. Time: ~10 hours + Tutoring
 
 ---
 
