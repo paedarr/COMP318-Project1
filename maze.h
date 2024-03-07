@@ -8,12 +8,17 @@
 #define PRGASST02_MAZE_H
 
 #include "position.h"
+#include "myDictionary.h"
 #include <vector>
 
 using std::vector;
 
 class Maze {
 public:
+
+  int path_length; //keeps track of the length of the map traversal path
+  int num_of_nodes_visited; // keeps track of the num of nodes that have been visited
+
   /**
    * Creates a Maze of the specified size.  Initially, all spaces are
    * assumed to contain no walls. The upper-left corner is
@@ -80,6 +85,12 @@ public:
    * @param y The Y Coordinate Position
    */
   bool isValid(int x, int y);
+
+/**
+   * Method to print out the maze, after loading, before any traversal is done.
+   * Purely for user interface purposes.
+**/
+  void print_maze();
 
 protected:
   /**

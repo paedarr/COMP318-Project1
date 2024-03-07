@@ -5,6 +5,7 @@
  */
 
 #include <stdexcept>
+#include <iostream>
 
 /* STL libraries needed */
 #include <stack>
@@ -19,7 +20,7 @@
  */
 
 #include "maze.h"
-#include "myDictionary.h"
+#include "position.h"
 
 using namespace std;
 
@@ -29,6 +30,8 @@ Maze::Maze(int w, int h) {
   // needs to initialize vector of position objects
   width = w;
   height = h;
+  path_length = 0;
+  
   positions = new Position**[height];
   for (int i = 0; i < height; i++){
     positions[i] = new Position*[width];
@@ -36,6 +39,9 @@ Maze::Maze(int w, int h) {
       positions[i][j] = new Position(j, i);
     }
   }
+
+  start = positions[0][0];
+  end = positions[height - 1][width - 1];
 }
 
 Maze::~Maze() {
@@ -57,14 +63,12 @@ int Maze::getHeight() {
 }
 
 bool Maze::isWall(int x, int y) {
-  if (positions[x][y] == '#')
-    return true;
-  else 
-    return false;
+  bool result = positions[y][x]->isWall();
+  return result;
 }
 
 void Maze::setWall(int x, int y) {
-  positions[x][y] = "#";
+  positions[y][x]->setWall();
 }
 
 vector<Position*> Maze::solveBreadthFirst() {
@@ -73,24 +77,27 @@ vector<Position*> Maze::solveBreadthFirst() {
    * the associated value should be a pointer to the Position from which
    * you saw the key
    */
-   
-    vector<int> path;
-    mazeHelper maze_helper;
-    queue maze_queue; // <-- for BFS stack storage
-    unordered_map<string, Position*> previous;
-    maze_queue.push_back(start)
+  
+    queue <Position*>maze_queue; // <-- for BFS stack storage
+    
+    maze_queue.push(start);
+    start -> predecessor = nullptr
+
+    path_length = 0;
+    num_of_nodes_visited = 0;
     
     while(!maze_queue.empty()){
+      num_of_nodes_visited++;
       Position* current = maze_queue.front();//could change to a to visit queue
-      maze_queue.dequeue();
-
+      maze_queue.pop();
+      
       if (current == end ){
-        maze_helper.addVisitFrom(position);
         vector<Position*> path;
-
+        
         while (current != nullptr) {
                 path.push_back(current);
-                current = previous[current->to_string()];
+                current = current->predecessor;
+                path_length++;
             }
             reverse(path.begin(), path.end());
             return path;
@@ -100,41 +107,46 @@ vector<Position*> Maze::solveBreadthFirst() {
         for (int i = 0; i < neighbors.size(); ++i) {
           Position * neighbor = neighbors[i];
 
-            if (previous.find(neighbor->to_string()) == previous.end()) {
-                toVisit.push(neighbor);
-                previous[neighbor->to_string()] = current;
+            if (neighbor -> predecessor == nullptr) {
+                maze_queue.push(neighbor);
+                neighbor -> predecessor = current;
             }
         }
     }
 
     return vector<Position*>();
   
-    
-  
+
 }
 
 vector<Position*> Maze::solveDepthFirst() {
-  stack<Position*> toVisit;
+    stack<Position*> toVisit;
     unordered_map<string, Position*> previous;
 
     toVisit.push(start);
     previous[start->to_string()] = nullptr;
 
+    path_length = 0;
+    num_of_nodes_visited = 0;
+
     while (!toVisit.empty()) {
         Position* current = toVisit.top();
         toVisit.pop();
+        num_of_nodes_visited++;
 
         if (current == end) {
             vector<Position*> path;
             while (current != nullptr) {
                 path.push_back(current);
                 current = previous[current->to_string()];
+                path_length++;
             }
             reverse(path.begin(), path.end());
             return path;
         }
 
         vector<Position*> neighbors = getNeighbors(current);
+
         for (int i = 0; i < neighbors.size(); ++i) {
           Position * neighbor = neighbors[i];
             if (previous.find(neighbor->to_string()) == previous.end()) {
@@ -171,4 +183,17 @@ vector<Position*> Maze::getNeighbors(Position* position) {
 
 bool Maze :: isValid(int x, int y) {
     return (x >= 0 && x < getWidth() && y >= 0 && y < getHeight() && !isWall(x, y));
+}
+
+void Maze :: print_maze() {
+  for (int y = 0; y < height; ++y) {
+    for (int x = 0; x < width; ++x) {
+      if (isWall(x, y)) {
+        cout << "#";
+      } else {
+        cout << ".";
+      }
+    }
+    cout << endl;
+  }
 }

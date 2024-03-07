@@ -4,7 +4,7 @@
  * M. Gagne
  */
 
-#include "maze.h"
+#include "mazeUtils.h"
 
 #include <fstream>
 #include <sstream>

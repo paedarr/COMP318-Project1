@@ -7,15 +7,15 @@
 #ifndef PRGASST02_MAZEUTILS_H
 #define PRGASST02_MAZEUTILS_H
 
-#include <string>
-
 #include "maze.h"
-#include <vector>
+#include "position.h"
 
+#include <string>
+#include <vector>
 using std::string;
 using std::vector;
 
-/**
+/*
  * Reads a map from the specified file.
  * @param filename The name of the map file.
  * @return A pointer to the Maze object containing that map.  Deleting this

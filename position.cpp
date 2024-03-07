@@ -14,7 +14,7 @@ using namespace std;
 Position::Position(int x, int y) {
   xPos = x;
   yPos = y;
-  // make sure to implement wall detection based on maze's current char
+  wall = false;
 }
 
 int Position::getX()  {
@@ -30,12 +30,7 @@ void Position::setWall()  {
 }
 
 bool Position::isWall()  {
-  if (wall == true){
-    return true;
-  }
-  else{
-    return false;
-  }
+  return wall;
 }
 
 string Position::to_string()  {

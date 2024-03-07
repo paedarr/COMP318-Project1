@@ -24,7 +24,7 @@ public:
    * This space is assumed to have no wall until we learn otherwise.
    */
   Position(int x, int y);
-
+  Position* predecessor;
   /* return X/Y coordinate of current position */
   int getX();
   int getY();
